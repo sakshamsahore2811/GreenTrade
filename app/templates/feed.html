@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title%} GreenTrade - Home{%endblock%}
+{%block content%}<h1>Welcome to green trade feed page</h1>
+<div class="container mt-5">
+    <h1>Items for Sale</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.description }}</td>
+                <td>${{ item.price }}</td>
+                <td>{{item.sold}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{%endblock%}
